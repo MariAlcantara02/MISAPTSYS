@@ -1,0 +1,20 @@
+/* Add this to your Tailwind CSS file or a custom CSS file */
+.fc-event {
+    @apply bg-blue-500 border-blue-600 text-white p-2 rounded-lg cursor-pointer;
+}
+
+.fc-event:hover {
+    @apply bg-blue-600;
+}
+
+.fc-toolbar {
+    @apply flex flex-wrap items-center justify-between mb-4;
+}
+
+.fc-toolbar-title {
+    @apply text-xl font-semibold;
+}
+
+.fc-button {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}

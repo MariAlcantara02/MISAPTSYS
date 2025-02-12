@@ -1,0 +1,41 @@
+<div class="max-w-6xl mx-auto p-8 bg-white shadow-lg rounded-xl mt-10">
+  <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">All Appointments</h1>
+
+  <div class="overflow-x-auto rounded-lg shadow">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-50">
+        <tr>
+          <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Name</th>
+          <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Department</th>
+          <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Reasons</th>
+          <th scope="col" class="px-6 py-4 text-left text-sm font-semibold text-gray-700 uppercase tracking-wider">Date & Time</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <% @appointments.each do |appointment| %>
+          <tr class="transition-all duration-200 hover:bg-gray-50">
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              <%= appointment.firstname %> <%= appointment.lastname %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+              <%= appointment.department %>
+            </td>
+            <td class="px-6 py-4 text-sm text-gray-700">
+              <%= appointment.reasons %>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+              <%= appointment.appointment_date.strftime("%B %d, %Y %I:%M %p") %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Optional: Add a "No Appointments" message -->
+  <% if @appointments.empty? %>
+    <div class="text-center py-6">
+      <p class="text-gray-500">No appointments found.</p>
+    </div>
+  <% end %>
+</div>
